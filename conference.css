@@ -1,0 +1,1034 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
+.header {
+    position: relative;
+    height: 100vh; /* Full screen height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: url('Background.jpg') no-repeat center center/cover; /* College image as background */
+    color: #fff;
+    overflow: hidden;
+}
+
+.ribbon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Spread left, center, and right */
+    z-index: 3;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.ribbon-logo {
+    height: auto; /* Remove fixed height to maintain aspect ratio */
+    max-height: 50px; /* Set a maximum height */
+    width: auto; /* Let the width adjust automatically */
+    object-fit: contain; /* Ensures the image is contained within the set dimensions without stretching */
+}
+
+.left-logo,
+.right-logo {
+    max-height: 50px; /* Set the maximum height */
+    width: auto; /* Ensure the width adjusts according to the height */
+    object-fit: contain; /* Ensures the image is contained within the set dimensions without stretching */
+}
+
+.right-logo {
+    max-width: 100%; /* Prevents the right logo from going out of screen */
+    overflow: hidden; /* Ensures it doesn't overflow beyond its container */
+    margin-right: 30px; /* Add margin to the right for spacing */
+}
+
+/* Center section layout */
+.ribbon-center {
+    display: flex;
+    align-items: center; /* Align image and text inline */
+    flex-direction: row;
+    text-align: center; /* Center align the text */
+    gap: 10px; /* Spacing between logo and text */
+}
+
+/* Text section styling */
+.ribbon-text {
+    display: flex;
+    flex-direction: column;
+}
+
+/* English text styling */
+.ribbon-text .english {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    color: #000;
+}
+
+/* Hindi text styling */
+.ribbon-text .hindi {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    color: #000;
+}
+
+/* Responsive styling for smaller screens */
+@media screen and (max-width: 768px) {
+    .ribbon {
+        padding: 10px 15px; /* Adjust padding for smaller screens */
+        flex-direction: column; /* Stack items vertically */
+        text-align: center; /* Center align the text */
+    }
+
+    .left-logo,
+    .right-logo {
+        display: none; /* Hide left and right logos on small screens */
+    }
+
+    .ribbon-center {
+        flex-direction: column; /* Stack the center content vertically */
+        gap: 5px; /* Reduce the gap for smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .ribbon {
+        padding: 10px 10px; /* Adjust padding further for very small screens */
+    }
+
+    .ribbon-logo {
+        max-height: 40px; /* Further reduce logo size */
+    }
+
+    .ribbon-center {
+        gap: 5px; /* Further reduce the gap between elements */
+    }
+}
+
+
+
+/* Add Google Fonts link for Hindi text in the <head> section */
+
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 150px;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    z-index: 1;
+}
+
+.partner-container {
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+}
+
+.knowledge-partner-container {
+    position: absolute;
+    bottom: 10px; /* Positions container near bottom-left */
+    left: 20px;
+    display: flex; /* Enables flexbox for horizontal layout */
+    flex-direction: column; /* Stacks the images and caption vertically */
+    align-items: center; /* Centers content horizontally */
+}
+
+.knowledge-partner-container .image-row {
+    display: flex; /* Places the two images side by side */
+    gap: 10px; /* Smaller gap between images */
+}
+
+.knowledge-partner-container img {
+    width: 70px; /* Fixed width for knowledge partner images */
+    height: 100px; /* Fixed height for knowledge partner images */
+    object-fit: fill; /* Ensures logos fit properly */
+}
+
+
+.academic-partner-container {
+    bottom: 20px;
+    right: 20px;
+}
+
+.partner-logo {
+    width: 120px; /* Adjust size as needed */
+    height: auto;
+}
+
+.partner-caption {
+    font-size: 1rem; /* Adjust text size as needed */
+    color: white;
+    margin-top: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .partner-logo {
+        width: 80px; /* Adjust size for smaller screens */
+    }
+
+    .partner-caption {
+        font-size: 0.9rem;
+    }
+}
+
+
+.content {
+    position: relative;
+    z-index: 2;
+}
+
+.content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0 0 20px;
+}
+
+.content p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.cta-button:hover {
+    background: #444;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.conference-title h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.conference-title p {
+    font-size: 1.2rem;
+    margin-top: 0;
+    font-weight: normal;
+}
+
+.conference-theme h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.conference-theme p {
+    font-size: 1.3rem;
+    margin-top: 5px;
+    font-weight: normal;
+}
+
+.date {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #f5a623; /* A bright orange color for the date to make it stand out */
+}
+
+@media (max-width: 768px) {
+    .partner-logo {
+        width: 80px; /* Adjust size for smaller screens */
+    }
+
+    .conference-title h1 {
+        font-size: 2rem;
+    }
+
+    .conference-theme h2 {
+        font-size: 1.5rem;
+    }
+
+    .conference-theme p {
+        font-size: 1.1rem;
+    }
+
+    .date {
+        font-size: 1.2rem;
+    }
+}
+
+/* Default styling for larger screens */
+.floating-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allows items to wrap to a new line */
+}
+
+.floating-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 0;
+    list-style: none;
+}
+
+/* Styling for medium screens (e.g., tablets) */
+@media (max-width: 768px) {
+    .floating-nav ul {
+        flex-direction: column; /* Stack menu items vertically */
+        align-items: center;
+    }
+
+    .floating-nav li {
+        width: 100%; /* Full width for items */
+        text-align: center;
+    }
+
+    .floating-nav {
+        padding: 10px; /* Adjust padding */
+    }
+}
+
+
+.floating-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #333; /* Background color for the navbar */
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.floating-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.floating-nav li {
+    display: inline;
+}
+
+.floating-nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.floating-nav a:hover {
+    background: #555; /* Change background color on hover */
+}
+
+/* Hamburger menu styling */
+
+
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    font-size: 30px;
+    color: white;
+    z-index: 1001;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .floating-nav ul {
+        display: none; /* Hide the links by default */
+        flex-direction: column; /* Stack links vertically */
+        align-items: flex-start; /* Align to the left */
+        gap: 15px;
+        padding: 10px;
+        width: 100%;
+        position: absolute;
+        top: 50px; /* Below the navbar */
+        left: 0;
+        background: #333; /* Background for the dropdown */
+    }
+
+    .hamburger-menu {
+        display: block; /* Show the hamburger icon */
+    }
+
+    .floating-nav.active ul {
+        display: flex; /* Show the nav links when the menu is active */
+    }
+
+    .floating-nav a {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
+
+
+body {
+    padding-top: 50px; /* Add padding to prevent content from overlapping the navbar */
+}
+
+
+
+
+.about-conference,
+.conference-tracks {
+    background: #f9f9f9;
+    padding: 40px 20px; /* Adjusted padding for smaller gap */
+    line-height: 1.6;
+}
+
+.about-conference h2, 
+.conference-tracks h2 {
+    color: #003366;
+    font-size: 2.2rem; /* Consistent font size */
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.about-content,
+.tracks-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.about-content p {
+    font-size: 1.1rem; /* Reduced font size for consistency */
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.tracks-content .call-for-papers,
+.tracks-content .tracks {
+    background: #eef5ff;
+    margin-bottom: 20px; /* Adjusted margin */
+    padding: 30px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tracks-content h3 {
+    font-size: 1.8rem;
+    color: #003366;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.note {
+    font-size: 1.1rem;
+    color: #333;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.call-for-papers-highlight {
+    background: #003366;
+    color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.call-for-papers-highlight h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #ffcc00; /* Highlighted heading color */
+}
+
+.call-for-papers-highlight p, .call-for-papers-highlight ul {
+    text-align: justify; /* Align content similar to About Conference section */
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.call-for-papers-highlight ul li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #f0f8ff;
+}
+
+.important-dates {
+    background: #f8f9fa;
+    padding: 20px 20px;
+    text-align: center;
+}
+
+.important-dates h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #003366;
+    margin-bottom: 20px;
+}
+
+.dates-table-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.dates-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dates-table thead {
+    background: #003366;
+    color: #ffffff;
+    text-align: left;
+}
+
+.dates-table th, .dates-table td {
+    padding: 15px 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.dates-table tr:last-child td {
+    border-bottom: none;
+}
+
+.dates-table tbody tr:hover {
+    background: #f0f8ff;
+}
+
+.dates-table tbody td {
+    color: #333333;
+    text-align: left;
+}
+
+.dates-table th {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+/* Section Wrapper */
+.paper-submission {
+    background: #f8f9fa; /* Light gray background for section consistency */
+    padding: 50px 20px; /* Consistent padding */
+    margin-top: 0; /* Removes any white gap above the section */
+}
+
+/* Guidelines and Publication Wrappers */
+.guidelines-wrapper, .publication-wrapper {
+    max-width: 1100px; /* Matches the width of previous sections */
+    margin: 0 auto 40px auto; /* Center alignment and spacing below each box */
+    background: #ffffff; /* White background for box */
+    padding: 25px 20px; /* Inner padding for content */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border: 2px solid #dde5ed; /* Consistent border style */
+}
+
+/* Section Heading */
+.paper-submission h2 {
+    font-size: 2rem; /* Large font size for prominence */
+    font-weight: 700; /* Bold text */
+    color: #003366; /* Dark blue color for emphasis */
+    text-align: center; /* Center alignment */
+    margin-bottom: 30px; /* Spacing below the heading */
+    margin-top: 0;
+}
+
+/* Box Subheadings */
+.guidelines-wrapper h3, .publication-wrapper h3 {
+    font-size: 1.5rem; /* Slightly smaller font for subheadings */
+    font-weight: 700; /* Bold text */
+    color: #003366; /* Matches the section heading color */
+    margin-bottom: 15px; /* Space below the heading */
+    text-align: left; /* Left-aligned text */
+    text-transform: uppercase; /* Uppercase for emphasis */
+}
+
+/* Sub-Subheadings */
+.guidelines-wrapper h4 {
+    font-size: 1.25rem; /* Slightly smaller for sub-subheadings */
+    font-weight: 600; /* Semi-bold text */
+    color: #004080; /* Slightly lighter blue for hierarchy */
+    margin-top: 20px; /* Space above the heading */
+    margin-bottom: 10px; /* Space below the heading */
+}
+
+/* Paragraph Text */
+.guidelines-wrapper p, .publication-wrapper p {
+    font-size: 1rem; /* Standard font size */
+    line-height: 1.6; /* Comfortable line spacing */
+    color: #333333; /* Dark gray text for readability */
+    margin-bottom: 20px; /* Space below each paragraph */
+    text-align: justify; /* Justified text for professional look */
+}
+
+/* Lists */
+.guidelines-wrapper ul, .publication-wrapper ul {
+    margin-left: 20px; /* Indent for list items */
+    margin-top: 10px; /* Space above the list */
+    padding-left: 20px; /* Additional padding for alignment */
+    list-style-type: disc; /* Bullet style */
+    color: #333333; /* Dark gray text */
+}
+
+.guidelines-wrapper ul li, .publication-wrapper ul li {
+    font-size: 1rem; /* Standard font size for list items */
+    margin-bottom: 8px; /* Spacing between list items */
+}
+
+.guidelines-wrapper ul li:last-child, 
+.publication-wrapper ul li:last-child {
+    margin-bottom: 0; /* Removes extra margin after the last item */
+}
+
+/* Consistent Box Spacing */
+.guidelines-wrapper:last-child, 
+.publication-wrapper:last-child {
+    margin-bottom: 0; /* Removes extra space after the last box */
+}
+
+/* Ensure Responsive Design */
+@media (max-width: 768px) {
+    .guidelines-wrapper, .publication-wrapper {
+        padding: 20px 15px; /* Reduce padding for smaller screens */
+        max-width: 100%; /* Ensure full width for mobile */
+    }
+    .paper-submission h2 {
+        font-size: 1.8rem; /* Adjust heading size for smaller screens */
+    }
+    .guidelines-wrapper h3, .publication-wrapper h3 {
+        font-size: 1.3rem; /* Adjust subheading size for smaller screens */
+    }
+    .guidelines-wrapper p, .publication-wrapper p,
+    .guidelines-wrapper ul li, .publication-wrapper ul li {
+        font-size: 0.9rem; /* Slightly smaller font size for readability */
+    }
+}
+
+/* Registration Section Wrapper */
+#registration.registration-section {
+    background: #f5f8fc; /* Light background to ensure consistency with other sections */
+    padding: 40px;
+    width: 100%; /* Full-width background */
+    box-sizing: border-box;
+    margin: 0 auto;
+    border: 1px solid #dfe7f3;
+    border-radius: 8px;
+}
+
+/* Section Container to Control Content Width */
+#registration .section-container {
+    max-width: 1200px; /* Set a maximum width for the content */
+    margin: 0 auto; /* Center align the content */
+    padding: 0 15px; /* Padding to prevent content from touching the edges */
+}
+
+/* Section Heading */
+#registration .section-title {
+    text-align: center;
+    font-size: 2.5rem; /* Adjust the font size as needed */
+    font-weight: bold;
+    color: #003366; /* Adjust the color to match the theme */
+    margin: 20px 0; /* Add margin for spacing above and below the title */
+}
+
+
+
+
+
+/* Highlight Box */
+#registration .highlight-box {
+    background: #ffffff; /* White background to maintain consistency */
+    padding: 20px;
+    border: 2px solid #003366; /* Dark blue border for emphasis */
+    border-radius: 8px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#registration .highlight-box p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #003366;
+    margin-bottom: 20px;
+}
+
+/* Submission Container */
+#registration .submission-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#registration .submission-link {
+    background: #003366;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background 0.3s;
+}
+
+#registration .submission-link:hover {
+    background: #002244;
+}
+
+#registration .qr-code-placeholder img {
+    width: 120px;
+    height: 120px;
+    border: 2px solid #003366;
+    border-radius: 8px;
+}
+
+/* Registration Table */
+#registration .registration-table-container {
+    margin-top: 20px;
+}
+
+#registration .registration-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+#registration .registration-table th, #registration .registration-table td {
+    border: 1px solid #dfe7f3; /* Consistent with previous section */
+    padding: 10px;
+    text-align: center;
+    font-size: 1rem;
+    color: #003366;
+}
+
+#registration .registration-table th {
+    background: #003366;
+    color: white;
+    font-weight: 700;
+}
+
+#registration .registration-table td {
+    background: #ffffff;
+}
+
+/* Fee Details */
+#registration .fee-details {
+    margin-top: 20px;
+}
+
+#registration .fee-details h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #003366;
+    margin-bottom: 15px;
+}
+
+#registration .fee-details ul {
+    margin-left: 20px;
+    margin-top: 10px;
+    list-style-type: disc;
+    color: #003366;
+}
+
+#registration .fee-details ul li {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+#registration .fee-details p {
+    font-size: 1rem;
+    color: #333333;
+    line-height: 1.6;
+    margin-top: 15px;
+}
+
+/* Payment Button */
+#registration .payment-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#registration .payment-link {
+    background: #007acc; /* Matches the button styling in previous sections */
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background 0.3s;
+}
+
+#registration .payment-link:hover {
+    background: #005f99;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #registration .highlight-box, #registration .submission-container, #registration .registration-table, #registration .fee-details {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    #registration .submission-container {
+        flex-direction: column;
+    }
+
+    #registration .qr-code-placeholder img {
+        width: 100px;
+        height: 100px;
+    }
+
+    #registration .registration-table th, #registration .registration-table td {
+        font-size: 0.9rem;
+    }
+
+    #registration .payment-link, #registration .submission-link {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+#conference-team {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    width: 100%; /* Ensure full width */
+    box-sizing: border-box;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #003366;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    padding-bottom: 20px;
+}
+
+.team-level {
+    margin-bottom: 40px;
+    text-align: center; /* Center align all levels */
+}
+
+.team-level-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #003366;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.team-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center all items */
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.team-member {
+    text-align: center;
+    flex: 1 1 150px;
+    max-width: 150px;
+    margin: 10px 0;
+}
+
+.team-member-image img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #003366;
+    
+}
+
+.team-member-details p {
+    margin: 5px 0;
+    font-size: 1.1rem;
+    color: #003366;
+}
+
+.team-member-details strong {
+    font-size: 1.2rem;
+    color: #003366;
+}
+
+#contact-us {
+    background-color: #f5f5f5; /* Light grey background for a clean and professional look */
+    color: #333; /* Dark text for good contrast */
+    padding: 40px 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    border-top: 2px solid #ddd; /* Subtle separator to differentiate footer */
+}
+
+.contact-heading {
+    text-align: center;
+    font-size: 24px; /* Adjust size */
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.contact-details {
+    text-align: center; /* Aligns the address, phone, and email */
+    font-size: 16px; /* Adjust size for readability */
+}
+
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    
+}
+
+.footer-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #ffffff; /* Dark blue to match professional branding */
+}
+
+.contact-info {
+    margin-bottom: 30px;
+}
+
+.contact-info p {
+    margin: 8px 0;
+    font-size: 1.1rem;
+}
+
+.contact-info a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.social-media {
+    margin-bottom: 30px;
+}
+
+.social-media p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.social-icons a {
+    margin: 0 15px;
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+.location {
+    margin-bottom: 30px;
+}
+
+.location p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffcc00; /* Change color for better visibility */
+}
+
+.location a {
+    color: #ffffff; /* Ensure the link color matches the theme */
+    text-decoration: none;
+    font-size: 1rem;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.location img {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+footer a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+footer .social-icons img:hover {
+    transform: scale(1.2);
+}
+
+
+
+
+.section {
+    padding: 20px 20px;
+    text-align: center;
+}
+
+.section:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
