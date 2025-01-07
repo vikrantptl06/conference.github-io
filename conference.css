@@ -38,9 +38,16 @@ body {
     object-fit: contain; /* Ensures the image is contained within the set dimensions without stretching */
 }
 
+.ribbon-left {
+    display: flex;
+    align-items: center; /* Align logos vertically */
+    gap: 15px; /* Add spacing between logos */
+}
+
+
 .left-logo,
-.right-logo {
-    max-height: 50px; /* Set the maximum height */
+.right-logo,.additional-logo  {
+    max-height: 40px; /* Set the maximum height */
     width: auto; /* Ensure the width adjusts according to the height */
     object-fit: contain; /* Ensures the image is contained within the set dimensions without stretching */
 }
@@ -92,7 +99,7 @@ body {
     }
 
     .left-logo,
-    .right-logo {
+    .right-logo,.additional-logo {
         display: none; /* Hide left and right logos on small screens */
     }
 
@@ -128,68 +135,164 @@ body {
     width: 150px;
 }
 
-.background {
+/* Background Carousel */
+.background-carousel {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
-    z-index: 1;
+    overflow: hidden;
+    z-index: 0; /* Keeps carousel behind everything */
+}
+
+.carousel-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-image:nth-child(1) {
+    animation: fade 15s infinite;
+}
+
+.carousel-image:nth-child(2) {
+    animation: fade 15s infinite;
+    animation-delay: 5s;
+}
+
+.carousel-image:nth-child(3) {
+    animation: fade 15s infinite;
+    animation-delay: 5s;
+}
+
+.carousel-image:nth-child(4) {
+    animation: fade 15s infinite;
+    animation-delay: 10s;
+}
+
+@keyframes fade {
+    0%, 33% {
+        opacity: 1;
+    }
+    34%, 100% {
+        opacity: 0;
+    }
+}
+
+/* Dark Overlay */
+.dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Full dark overlay */
+    z-index: 1; /* Keeps it above carousel but behind content */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Keeps content centered and logos at bottom */
+    padding: 30px 0; /* Adds space at the top and bottom of the overlay */
+}
+
+/* Content (Centered) */
+
+.content {
+    position: absolute;
+    top: 45%; /* Push to vertical center */
+    left: 50%; /* Push to horizontal center */
+    transform: translate(-50%, -50%); /* Adjust to center accurately */
+    text-align: center; /* Ensures the text remains centered */
+    color: white; /* Ensure readability */
+    padding: 20px; /* Adds spacing inside the content box */
+}
+
+
+.conference-title h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.conference-title p,
+.conference-theme p {
+    font-size: 1.2rem;
+    margin-bottom: 10px; /* Adds space between lines */
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 30px; /* Adds more space below the content */
+    padding: 10px 20px;
+    background-color: #003366;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Partner Section (Bottom Logos) */
+.partner-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 20px;
 }
 
 .partner-container {
-    position: absolute;
     text-align: center;
-    z-index: 1;
 }
 
-.knowledge-partner-container {
-    position: absolute;
-    bottom: 10px; /* Positions container near bottom-left */
-    left: 20px;
-    display: flex; /* Enables flexbox for horizontal layout */
-    flex-direction: column; /* Stacks the images and caption vertically */
-    align-items: center; /* Centers content horizontally */
-}
-
-.knowledge-partner-container .image-row {
-    display: flex; /* Places the two images side by side */
-    gap: 10px; /* Smaller gap between images */
-}
-
-.knowledge-partner-container img {
-    width: 70px; /* Fixed width for knowledge partner images */
-    height: 100px; /* Fixed height for knowledge partner images */
-    object-fit: fill; /* Ensures logos fit properly */
-}
-
-
-.academic-partner-container {
-    bottom: 20px;
-    right: 20px;
+.image-row {
+    display: flex;
+    gap: 10px; /* Gap between images */
+    justify-content: center;
 }
 
 .partner-logo {
-    width: 120px; /* Adjust size as needed */
+    width: 80px; /* Reduced logo size */
     height: auto;
 }
 
 .partner-caption {
-    font-size: 1rem; /* Adjust text size as needed */
+    font-size: 1rem;
     color: white;
     margin-top: 5px;
-    font-weight: bold;
-    text-align: center;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
+    .conference-title h1 {
+        font-size: 1.8rem;
+    }
+
+    .conference-title p,
+    .conference-theme p {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+
     .partner-logo {
-        width: 80px; /* Adjust size for smaller screens */
+        width: 60px; /* Further reduction for smaller screens */
     }
 
     .partner-caption {
         font-size: 0.9rem;
+    }
+
+    .content {
+        padding: 10px 10px; /* Adjusted padding for smaller screens */
     }
 }
 
@@ -415,6 +518,7 @@ body {
 
 .about-conference h2, 
 .conference-tracks h2 {
+    
     color: #003366;
     font-size: 2.2rem; /* Consistent font size */
     text-align: center;
@@ -424,6 +528,7 @@ body {
 
 .about-content,
 .tracks-content {
+    text-align: justify; 
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
@@ -434,6 +539,96 @@ body {
     color: #333;
     margin-bottom: 20px;
 }
+
+/* Outer Container Styling */
+.outer-container {
+    background-color: #f9f9f9; /* Light gray background outside the highlights box */
+    padding: 40px 0; /* Space around the highlights box */
+}
+
+/* Highlights Section Styling */
+.highlights-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 20px;
+    background-color: #ffffff; /* White background for the highlights box */
+    margin: 0 auto;
+    border-radius: 15px; /* Rounded corners for the box */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for elegance */
+    max-width: 900px; /* Restrict width for readability */
+}
+
+/* Heading Styling */
+.highlights-heading {
+    font-size: 32px;
+    font-weight: 700; /* Bold heading */
+    color: #003366; /* Professional navy color */
+    margin-bottom: 20px;
+    text-transform: uppercase; /* Ensure heading stands out */
+}
+
+/* Content Styling */
+.highlights-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Add spacing between content */
+}
+
+/* List Styling */
+.highlights-list {
+    list-style: none; /* Remove default bullets */
+    padding: 0;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 2; /* Add sufficient spacing between list items */
+    color: #333; /* Professional and readable text color */
+}
+
+.highlights-list li {
+    position: relative;
+    padding-left: 40px; /* Space for custom icons */
+}
+
+.highlights-list li::before {
+    content: "\2713"; /* Star icon for highlights */
+    color: #000; /* Golden yellow color for icon */
+    font-size: 18px;
+    position: absolute;
+    left: 0;
+}
+
+/* Note Styling */
+.highlights-note {
+    font-size: 14px;
+    color: #666;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .highlights-section {
+        padding: 40px 20px; /* Add internal padding for smaller screens */
+        margin: 0 15px; /* Add margin to prevent box from touching the screen */
+    }
+
+    .highlights-heading {
+        font-size: 28px;
+    }
+
+    .highlights-list {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .highlights-note {
+        font-size: 12px;
+    }
+}
+
 
 .tracks-content .call-for-papers,
 .tracks-content .tracks {
