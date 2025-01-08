@@ -11,7 +11,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: url('Background.jpg') no-repeat center center/cover; /* College image as background */
+    background: url('image4.JPG') no-repeat center center/cover; /* College image as background */
     color: #fff;
     overflow: hidden;
 }
@@ -198,7 +198,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Keeps content centered and logos at bottom */
-    padding: 30px 0; /* Adds space at the top and bottom of the overlay */
+    padding: 10px 0; /* Adds space at the top and bottom of the overlay */
 }
 
 /* Content (Centered) */
@@ -243,8 +243,27 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 20px;
+    padding: 30px;
+} 
+
+/* New Middle Partner Logo */
+.partner-logo-middle {
+    width: 120px; /* Slightly bigger than other logos */
+    height: auto;
+    margin: 0 20px; /* Adds spacing from surrounding logos */
+    position: relative;
+    left: -77px;
 }
+
+/* Adjust layout for better alignment */
+/* .partner-section {
+    display: flex;
+    justify-content: center; /* Center align all logos */
+    /* align-items: center; /* Vertically align logos */
+    /* gap: 20px;  */ */
+
+
+
 
 .partner-container {
     text-align: center;
@@ -256,7 +275,7 @@ body {
     justify-content: center;
 }
 
-.partner-logo {
+.partner-logo-knowledge-partner, .partner-logo {
     width: 80px; /* Reduced logo size */
     height: auto;
 }
@@ -267,6 +286,14 @@ body {
     margin-top: 5px;
 }
 
+
+.partner-caption-middle{
+    font-size: 1rem;
+    color: white;
+    margin-top: 5px;
+    position: relative;
+    left: -77px;
+}
 /* Responsive Design */
 @media (max-width: 768px) {
     .conference-title h1 {
@@ -283,12 +310,41 @@ body {
         padding: 8px 16px;
     }
 
-    .partner-logo {
-        width: 60px; /* Further reduction for smaller screens */
+    .partner-logo-knowledge-partner {
+        width: 50px; /* Adjust the width */
+        height: auto; /* Maintain aspect ratio */
+        margin: 5px; /* Add some spacing for better layout */
     }
 
     .partner-caption {
-        font-size: 0.9rem;
+        font-size: 0.85rem; /* Adjust caption font size */
+        text-align: center; /* Center align the captions */
+    }
+
+    .partner-caption-middle {
+        font-size: 0.85rem; /* Adjust caption font size */
+        text-align: center; /* Center align the captions */
+        position: relative;
+        left: 0px;
+    }
+
+    .partner-logo-middle {
+        width: 80px; /* Adjust size for smaller screens */
+        height: auto;
+        margin: 5px; /* Reduce margin for compact layout */
+        position: relative;
+        left: 0px;
+    }
+
+    .partner-section {
+        flex-wrap: wrap; /* Wraps logos for better fit */
+        gap: 10px; /* Reduce gap for smaller screens */
+    }
+
+    .image-row {
+        display: flex;
+        justify-content: center; /* Center align logos */
+        flex-wrap: wrap; /* Wrap logos if screen is small */
     }
 
     .content {
@@ -366,7 +422,7 @@ body {
 }
 
 @media (max-width: 768px) {
-    .partner-logo {
+    .partner-logo,.partner-logo-middle {
         width: 80px; /* Adjust size for smaller screens */
     }
 
@@ -526,13 +582,20 @@ body {
     font-weight: 700;
 }
 
-.about-content,
-.tracks-content {
+.about-content {
     text-align: justify; 
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
+
+.tracks-content{
+    text-align: left; 
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 
 .about-content p {
     font-size: 1.1rem; /* Reduced font size for consistency */
@@ -1227,6 +1290,13 @@ body {
     margin: 10px 0;
 }
 
+
+.team-member1 {
+    text-align: center;
+    flex: 1 1 150px;
+    max-width: 250px;
+    margin: 10px 0;
+}
 .team-member-image img {
     width: 100px;
     height: 100px;
@@ -1346,6 +1416,8 @@ body {
     vertical-align: middle;
     margin-right: 10px;
 }
+
+
 
 footer a:hover {
     color: #0056b3;
