@@ -275,12 +275,12 @@ body {
     justify-content: center;
 }
 
-.partner-logo-knowledge-partner, .partner-logo {
+.partner-logo-knowledge-partner, .partner-logo-right {
     width: 80px; /* Reduced logo size */
     height: auto;
 }
 
-.partner-caption {
+.partner-caption, .partner-caption-right {
     font-size: 1rem;
     color: white;
     margin-top: 5px;
@@ -296,6 +296,7 @@ body {
 }
 /* Responsive Design */
 @media (max-width: 768px) {
+    
     .conference-title h1 {
         font-size: 1.8rem;
     }
@@ -310,6 +311,14 @@ body {
         padding: 8px 16px;
     }
 
+    .partner-logo-right{
+        width: 60px; /* Adjust the width */
+        height: auto; /* Maintain aspect ratio */
+        margin: 5px; /* Add some spacing for better layout */
+        position: relative;
+        left: 180px;
+    }
+
     .partner-logo-knowledge-partner {
         width: 50px; /* Adjust the width */
         height: auto; /* Maintain aspect ratio */
@@ -319,6 +328,13 @@ body {
     .partner-caption {
         font-size: 0.85rem; /* Adjust caption font size */
         text-align: center; /* Center align the captions */
+    }
+
+    .partner-caption-right{
+        font-size: 0.85rem; /* Adjust caption font size */
+        text-align: center; /* Center align the captions */   
+        position: relative;
+        left: 180px;
     }
 
     .partner-caption-middle {
@@ -351,6 +367,7 @@ body {
         padding: 10px 10px; /* Adjusted padding for smaller screens */
     }
 }
+
 
 
 .content {
