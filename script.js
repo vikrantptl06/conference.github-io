@@ -20,3 +20,59 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+document.getElementById('hamburgerMenu').addEventListener('click', function() {
+    document.querySelector('.floating-nav').classList.toggle('active');
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', function(event) {
+    const nav = document.querySelector('.floating-nav');
+    const isClickInside = nav.contains(event.target);
+    if (!isClickInside && nav.classList.contains('active')) {
+        nav.classList.remove('active');
+    }
+});
+
+// Close menu on resize (optional)
+window.addEventListener('resize', function() {
+    if (window.innerWidth > 992) {
+        document.querySelector('.floating-nav').classList.remove('active');
+    }
+});
+
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let slides = document.getElementsByClassName("slide");
+    let dots = document.getElementsByClassName("dot");
+
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1; }
+
+    slides[slideIndex - 1].style.display = "block";
+
+    for (let i = 0; i < dots.length; i++) {
+        dots[i].classList.remove("active");
+    }
+
+    dots[slideIndex - 1].classList.add("active");
+
+    setTimeout(showSlides, 4000); // Change slide every 3 seconds
+}
+
+function changeSlide(n) {
+    slideIndex += n - 1;
+    showSlides();
+}
+
+function currentSlide(n) {
+    slideIndex = n - 1;
+    showSlides();
+}
+
