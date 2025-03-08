@@ -13,27 +13,27 @@
     <header class="header">
         <div class="ribbon" id="home">
             <div class="ribbon-left">
-                <img src="left-logo.png" alt="Left Logo" class="ribbon-logo left-logo">
-                <img src="additional-logo.png" alt="Additional Logo" class="ribbon-logo additional-logo">
+                <img src="Assets/left-logo.png" alt="Left Logo" class="ribbon-logo left-logo">
+                <img src="Assets/additional-logo.png" alt="Additional Logo" class="ribbon-logo additional-logo">
             </div>
          
             <div class="ribbon-center">
-                <img src="image.png" alt="IIFT Delhi Logo" class="ribbon-logo center-logo">
+                <img src="Assets/image.png" alt="IIFT Delhi Logo" class="ribbon-logo center-logo">
                 <div class="ribbon-text">
                     <p class="english">Indian Institute of Foreign Trade</p>
                     <p class="hindi">भारतीय विदेश व्यापार संस्थान</p>
                 </div>
             </div>
-            <img src="right-logo.png" alt="Right Logo" class="ribbon-logo right-logo">
+            <img src="Assets/right-logo.png" alt="Right Logo" class="ribbon-logo right-logo">
         </div>
         
         
     
         <div class="background-carousel">
-            <div class="carousel-image" style="background-image: url('image4.jpg');"></div>
-            <div class="carousel-image" style="background-image: url('image1.jpg');"></div>
-            <div class="carousel-image" style="background-image: url('image2.jpg');"></div>
-            <div class="carousel-image" style="background-image: url('image3.jpg');"></div>
+            <div class="carousel-image" style="background-image: url('Assets/image4.jpg');"></div>
+            <div class="carousel-image" style="background-image: url('Assets/image1.jpg');"></div>
+            <div class="carousel-image" style="background-image: url('Assets/image2.jpg');"></div>
+            <div class="carousel-image" style="background-image: url('Assets/image3.jpg');"></div>
             
         </div>
         
@@ -54,26 +54,35 @@
             </div>
         
             <div class="partner-section">
+                <!-- Knowledge Partner Section -->
                 <div class="partner-container knowledge-partner-container">
-                    <div class="image-row">
-                        <img src="Logo1.png" alt="Knowledge Partner Logo" class="partner-logo-knowledge-partner">
-                        <img src="Knowledge.png" alt="Knowledge Partner Logo" class="partner-logo-knowledge-partner">
-                        <img src="Knowledge2.png" alt="Knowledge Partner Logo" class="partner-logo-knowledge-partner">
-                    </div>
                     <p class="partner-caption"><b>Knowledge Partners</b></p>
+                    <div class="image-row">
+                        <img src="Assets/Logo1.png" alt="Knowledge Partner Logo" class="partner-logo-knowledge-partner">
+                        <img src="Assets/Knowledge.png" alt="Knowledge Partner Logo" class="partner-logo-knowledge-partner">
+                        <img src="Assets/Knowledge2.png" alt="Knowledge Partner Logo" class="partner-logo-knowledge-partner">
+                    </div>
                 </div>
             
-                <!-- New Middle Partner Logo -->
+                <!-- Research Partner Section with Two Images -->
                 <div class="partner-container middle-partner-container">
-                    <img src="Academic.png" alt="Middle Research Partner Logo" class="partner-logo-middle">
-                    <p class="partner-caption-middle"><b>Research Partner</b></p>
+                    <p class="partner-caption"><b>Research Partner</b></p>
+                    <div class="image-row">
+                        <img src="Assets/Academic.png" alt="Research Partner Logo" class="partner-logo-middle">
+                        <img src="Assets/Academic2.png" alt="Research Partner Logo" class="partner-logo-middle">
+                    </div>
                 </div>
             
+                <!-- Academic Partner Section with Two Images -->
                 <div class="partner-container academic-partner-container">
-                    <img src="Academic2.png" alt="Academic Partner Logo" class="partner-logo">
-                    <p class="partner-caption-acad"><b>Academic Partner</b></p>
+                    <p class="partner-caption"><b>Academic Partner</b></p>
+                    <div class="image-row">
+                        <img src="Assets/DCU.jpeg" alt="Academic Partner Logo" class="partner-logo">
+                        <img src="Assets/Southumpton.jpeg" alt="Academic Partner Logo" class="partner-logo">
+                    </div>
                 </div>
             </div>
+            
             
         </div>
         
@@ -85,18 +94,46 @@
         </div>
         <ul id="navLinks" class="nav-links">
             <li><a href="#home">HOME</a></li>
-            <li><a href="#about-conference">ABOUT THE CONFERENCE</a></li>
-            <li><a href="#conference-tracks">CONFERENCE TRACKS</a></li>
+            <li><a href="#Announcements">ANNOUNCEMENTS</a></li>
+            <li><a href="#about-conference">ABOUT</a></li>
+            <li><a href="#conference-tracks">TRACKS</a></li>
             <li><a href="#important-dates">IMPORTANT DATES</a></li>
-            <li><a href="#paper-submission-guidelines">PAPER SUBMISSION GUIDELINES</a></li>
+            <li><a href="#paper-submission-guidelines">GUIDELINES</a></li>
             <li><a href="#registration">REGISTRATION</a></li>
-            <li><a href="#conference-team">CONFERENCE TEAM</a></li>
-            <li><a href="#contact-us">CONTACT US</a></li>
+            <li><a href="#conference-team">TEAM</a></li>
+            <li><a href="#contact-us">CONTACT</a></li>
         </ul>
     </nav>
+   
+<section id="Announcements" class="announcements">
+    <h2 class="slider-heading">Latest Conference Announcements</h2>
     
-    
-    
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide fade">
+                <img src="Assets/Ann1.jpeg" alt="Conference Image 1">
+            </div>
+            <div class="slide fade">
+                <img src="Assets/Ann2.jpeg" alt="Conference Image 2">
+            </div>
+            <div class="slide fade">
+                <img src="Assets/Ann3.jpeg" alt="Conference Image 3">
+            </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+
+        <!-- Dots for Slide Navigation -->
+        <div class="dots-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+
+</section>
 
     <section id="about-conference" class="about-conference">
         <h2>About Conference</h2>
@@ -114,6 +151,8 @@
             </p>
         </div>
     </section>
+
+  
 
     
     <section class="outer-container">
@@ -320,7 +359,7 @@
                     
     
                     <div class="qr-code-placeholder">
-                        <img src="QRCode.png" alt="QR Code for Submission Link" />
+                        <img src="Assets/QRCode.png" alt="QR Code for Submission Link" />
                     </div>
                 </div>
             </div>
@@ -378,7 +417,7 @@
                         Proceed to Payment
                     </button>
                     <div class="qr-code-placeholder">
-                        <img src="QRPayment.png" alt="QR Code for Payment Link" />
+                        <img src="Assets/QRPayment.png" alt="QR Code for Payment Link" />
                     </div>
                 </div>
             </div>
@@ -395,7 +434,7 @@
             <div class="team-member1">
                 <div class="team-member-image">
                     <!-- Add image source here -->
-                    <img src="RakeshJoshi.jpeg" alt="Prof. Rakesh Mohan Joshi" />
+                    <img src="Assets/RakeshJoshi.jpeg" alt="Prof. Rakesh Mohan Joshi" />
                 </div>
                 <div class="team-member-details">
                     <p><strong>Prof. Rakesh Mohan Joshi</strong></p>
@@ -412,7 +451,7 @@
             <div class="team-member1">
                 <div class="team-member-image">
                     <!-- Add image source here -->
-                    <img src="AsheeshPandey.jpg" alt="Dr. Asheesh Pandey" />
+                    <img src="Assets/AsheeshPandey.jpg" alt="Dr. Asheesh Pandey" />
                 </div>
                 <div class="team-member-details">
                     <p><strong>Dr. Asheesh Pandey</strong></p>
@@ -428,7 +467,7 @@
                 <div class="team-member">
                     <div class="team-member-image">
                         <!-- Add image source here -->
-                        <img src="PreetiTak.jpeg" alt="Dr. Preeti Tak" />
+                        <img src="Assets/PreetiTak.jpeg" alt="Dr. Preeti Tak" />
                     </div>
                     <div class="team-member-details">
                         <p><strong>Dr. Preeti Tak</strong></p>
@@ -437,7 +476,7 @@
                 <div class="team-member">
                     <div class="team-member-image">
                         <!-- Add image source here -->
-                        <img src="ashishgupta.jpg" alt="Dr. Ashish Gupta" />
+                        <img src="Assets/ashishgupta.jpg" alt="Dr. Ashish Gupta" />
                     </div>
                     <div class="team-member-details">
                         <p><strong>Dr. Ashish Gupta</strong></p>
@@ -452,7 +491,7 @@
                 <div class="team-member">
                     <div class="team-member-image">
                         <!-- Add image source here -->
-                        <img src="arunima.jpg" alt="Dr. Arunima Rana" />
+                        <img src="Assets/arunima.jpg" alt="Dr. Arunima Rana" />
                     </div>
                     <div class="team-member-details">
                         <p><strong>Dr. Arunima Rana</strong></p>
@@ -461,7 +500,7 @@
                 <div class="team-member">
                     <div class="team-member-image">
                         <!-- Add image source here -->
-                        <img src="tuheena.jpg" alt="Dr. Tuheena Mukherjee" />
+                        <img src="Assets/tuheena.jpg" alt="Dr. Tuheena Mukherjee" />
                     </div>
                     <div class="team-member-details">
                         <p><strong>Dr. Tuheena Mukherjee</strong></p>
@@ -470,7 +509,7 @@
                 <div class="team-member">
                     <div class="team-member-image">
                         <!-- Add image source here -->
-                        <img src="papiya.jpg" alt="Dr. Papiya Ghosh" />
+                        <img src="Assets/papiya.jpg" alt="Dr. Papiya Ghosh" />
                     </div>
                     <div class="team-member-details">
                         <p><strong>Dr. Papiya Ghosh</strong></p>
@@ -479,7 +518,7 @@
                 <div class="team-member">
                     <div class="team-member-image">
                         <!-- Add image source here -->
-                        <img src="charu.jpeg" alt="Dr. Charu Grover" />
+                        <img src="Assets/charu.jpeg" alt="Dr. Charu Grover" />
                     </div>
                     <div class="team-member-details">
                         <p><strong>Dr. Charu Grover</strong></p>
@@ -488,7 +527,7 @@
                 <div class="team-member">
                     <div class="team-member-image">
                         <!-- Add image source here -->
-                        <img src="anju.jpg" alt="Dr. Anju Goswami" />
+                        <img src="Assets/anju.jpg" alt="Dr. Anju Goswami" />
                     </div>
                     <div class="team-member-details">
                         <p><strong>Dr. Anju Goswami</strong></p>
@@ -503,7 +542,7 @@
                 <div class="team-member">
                     <div class="team-member-image">
                         <!-- Add image source here -->
-                        <img src="Deepika.png" alt="Deepika Gupta" />
+                        <img src="Assets/Deepika.png" alt="Deepika Gupta" />
                     </div>
                     <div class="team-member-details">
                         <p><strong>Deepika Gupta</strong></p>
@@ -512,7 +551,7 @@
                 <div class="team-member">
                     <div class="team-member-image">
                         <!-- Add image source here -->
-                        <img src="Piyalee.png" alt="Piyalee Bhattacharya" />
+                        <img src="Assets/Piyalee.png" alt="Piyalee Bhattacharya" />
                     </div>
                     <div class="team-member-details">
                         <p><strong>Piyalee Bhattacharya</strong></p>
@@ -521,7 +560,7 @@
                 <div class="team-member">
                     <div class="team-member-image">
                         <!-- Add image source here -->
-                        <img src="Simran.png" alt="Simran Rathi" />
+                        <img src="Assets/Simran.png" alt="Simran Rathi" />
                     </div>
                     <div class="team-member-details">
                         <p><strong>Simran Rathi</strong></p>
@@ -531,7 +570,7 @@
                 <div class="team-member">
                     <div class="team-member-image">
                         <!-- Add image source here -->
-                        <img src="Shikha.png" alt="Shikha Bhakri" />
+                        <img src="Assets/Shikha.png" alt="Shikha Bhakri" />
                     </div>
                     <div class="team-member-details">
                         <p><strong>Shikha Bhakri</strong></p>
@@ -540,7 +579,7 @@
                 <div class="team-member">
                     <div class="team-member-image">
                         <!-- Add image source here -->
-                        <img src="Monika.png" alt="Monika" />
+                        <img src="Assets/Monika.png" alt="Monika" />
                     </div>
                     <div class="team-member-details">
                         <p><strong>Monika</strong></p>
@@ -549,7 +588,7 @@
                 <div class="team-member">
                     <div class="team-member-image">
                         <!-- Add image source here -->
-                        <img src="Animesh.png" alt="Animesh Chandra" />
+                        <img src="Assets/Animesh.png" alt="Animesh Chandra" />
                     </div>
                     <div class="team-member-details">
                         <p><strong>Animesh Chandra</strong></p>
@@ -558,7 +597,7 @@
                 <div class="team-member">
                     <div class="team-member-image">
                         <!-- Add image source here -->
-                        <img src="Prayas.png" alt="Prayas Arora" />
+                        <img src="Assets/Prayas.png" alt="Prayas Arora" />
                     </div>
                     <div class="team-member-details">
                         <p><strong>Prayas Arora</strong></p>
@@ -587,13 +626,13 @@
                     <p><strong>Follow us on:</strong></p>
                     <div class="social-icons">
                         <a href="https://www.linkedin.com/company/iift-indian-institute-of-foreign-trade/posts/?feedView=all" target="_blank" title="LinkedIn">
-                            <img src="Linkedin.jpg" alt="LinkedIn" />
+                            <img src="Assets/Linkedin.jpg" alt="LinkedIn" />
                         </a>
                         <a href="https://x.com/i/flow/login?redirect_after_login=%2Fiift_official" target="_blank" title="Twitter">
-                            <img src="twitter.jpeg" alt="Twitter" />
+                            <img src="Assets/twitter.jpeg" alt="Twitter" />
                         </a>
                         <a href="https://www.facebook.com/IIFT1963/" target="_blank" title="Facebook">
-                            <img src="facebook.png" alt="Facebook" />
+                            <img src="Assets/facebook.png" alt="Facebook" />
                         </a>
                     </div>
                 </div>
