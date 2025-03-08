@@ -11,7 +11,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: url('image4.JPG') no-repeat center center/cover; /* College image as background */
+    background: url('Assets/image4.JPG') no-repeat center center/cover; /* College image as background */
     color: #fff;
     overflow: hidden;
 }
@@ -359,7 +359,81 @@ body {
         padding: 10px 10px; /* Adjusted padding for smaller screens */
     }
 }
+.partner-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    flex-wrap: wrap; /* Ensures responsiveness */
+}
 
+/* General Partner Styling */
+.partner-container {
+    text-align: center;
+    width: 30%; /* Distributes the space evenly */
+}
+
+/* Ensuring captions are at the top */
+.partner-caption {
+    font-size: 1rem;
+    color: white;
+    margin-bottom: 10px; /* Adds space between caption and images */
+}
+
+/* Align images below the captions */
+.image-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Adds spacing between images */
+}
+
+.middle-partner-container .image-row {
+    margin-left: 140px; /* Moves the entire row to the right */
+}
+
+
+
+/* Adjust logo sizes */
+.partner-logo-knowledge-partner, 
+.partner-logo-middle, 
+.partner-logo {
+    width: 100px; /* Ensure uniform size */
+    height: auto;
+}
+                    
+/* Responsive Design */
+@media (max-width: 768px) {
+    .partner-container {
+        width: 100%; /* Full width on smaller screens */
+        margin-bottom: 20px;
+    }
+
+    .image-row {
+        flex-wrap: wrap;
+    }
+
+    .partner-logo-knowledge-partner, 
+    .partner-logo-middle, 
+    .partner-logo {
+        width: 60px; /* Reduce size on small screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .knowledge-partner-container, 
+    .academic-partner-container { 
+        display: none; /* Hides Knowledge and Academic Partners on mobile */
+    }
+
+    .middle-partner-container {
+        width: 100%; /* Makes sure Research Partner takes full width */
+        text-align: center; /* Centers it */
+    }
+
+    .middle-partner-container .image-row {
+        margin-right: 110px; /* Moves the entire row to the right */
+    }
+}
 
 
 .content {
@@ -571,8 +645,133 @@ body {
     padding-top: 50px; /* Add padding to prevent content from overlapping the navbar */
 }
 
+/* Slider Heading */
+.slider-heading {
+    color: #003366;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 12px;
+    background: white;
+    margin-bottom: 10px;
+    text-align: center;
+}
 
+/* Slider Container */
+.slider-container {
+    position: relative;
+    max-width: 420px; /* Reduced from 565px */
+    margin: auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
 
+/* Slider */
+.slider {
+    position: relative;
+    width: 100%;
+    height: 600px; /* Reduced from 800px */
+    overflow: hidden;
+}
+
+/* Slides */
+.slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+/* Image Styling */
+.slide img {
+    width: 420px;  /* Reduced from 565px */
+    height: 600px; /* Reduced from 800px */
+    object-fit: cover;
+}
+
+/* Navigation Arrows */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px; /* Adjusted for smaller size */
+    font-weight: bold;
+    padding: 6px;
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.prev:hover, .next:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.prev { left: 8px; }
+.next { right: 8px; }
+
+/* Dots Navigation */
+.dots-container {
+    text-align: center;
+    padding: 8px;
+    background: white;
+}
+
+.dot {
+    height: 8px;
+    width: 8px;
+    margin: 4px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dot:hover {
+    background-color: #666;
+}
+
+.dot.active {
+    background-color: #003366;
+}
+
+/* Fade Animation */
+.fade {
+    animation: fadeEffect 1s;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0.3; }
+    to { opacity: 1; }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 480px) {
+    .slider-container {
+        max-width: 100%;
+        border-radius: 0;
+    }
+
+    .slider {
+        height: 300px; /* Adjusts height for mobile */
+    }
+
+    .slider-heading {
+        font-size: 18px;
+    }
+
+    .slide img {
+        width: 100%;
+        height: auto;
+    }
+
+    .prev, .next {
+        font-size: 20px;
+        padding: 4px;
+    }
+}
 
 .about-conference,
 .conference-tracks {
@@ -582,7 +781,7 @@ body {
 }
 
 .about-conference h2, 
-.conference-tracks h2 {
+.conference-tracks h2, .Announcements h2 {
     
     color: #003366;
     font-size: 2.2rem; /* Consistent font size */
